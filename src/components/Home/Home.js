@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Class from '../Class/Class';
+import ClassGraphQL from '../Class/ClassGraphQL';
 import './Home.css'
 
 function Home(prop) {
@@ -29,9 +30,18 @@ function Home(prop) {
                 <button type="submit">Add Class!</button>
             </form>
             <div className="my-classes">
-                {favoriteClasses.map((favClass) => 
-                    <Class name={favClass} key={favClass} />
-                )}
+                <div className="api-section">
+                    <p>Rest Section</p>
+                    {favoriteClasses.map((favClass) => 
+                        <Class name={favClass} key={favClass} />
+                    )}
+                </div>
+                <div className="api-section">
+                    <p>GraphQL Section</p>
+                    {favoriteClasses.map((favClass) => 
+                        <ClassGraphQL name={favClass} key={favClass} />
+                    )}
+                </div>
             </div>
         </div>
     )
